@@ -1,3 +1,7 @@
+---
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,6 +13,7 @@
     <title>Owen Portfolio | Full Stack Developer</title>
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
@@ -19,5 +24,6 @@
     margin: 0;
     width: 100%;
     height: 100%;
+    font-family: "Inter", sans-serif;
   }
 </style>
