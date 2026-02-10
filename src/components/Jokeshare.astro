@@ -1,0 +1,70 @@
+---
+
+---
+
+<div class="jokeshareSection">
+  <div class="content">
+    <h2>Jokeshare</h2>
+    <p>A single page app that allows users to share and collect jokes.</p>
+    <p>Built with React, Zustand, Tailwind CSS</p>
+    <div class="options">
+      <a href="https://blendbetter.vercel.app" target="_blank">View Project</a>
+      <a href="">More Details</a>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  .jokeshareSection {
+    margin-top: 30px;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 700px;
+    background-image: url("jokeshareBG.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+
+  .content {
+    position: absolute;
+    top: 26%;
+    left: 10%;
+    width: 350px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin: 0 0 2rem 0;
+      letter-spacing: 1px;
+    }
+    p {
+      font-size: 1rem;
+      letter-spacing: 0.4px;
+      line-height: 1.4;
+    }
+    .options {
+      margin-top: 1.2rem;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 26px;
+      margin-right: 1rem;
+      border: 1px solid #fff;
+    }
+    a:hover {
+      background-color: #fff;
+      color: #555555;
+    }
+  }
+</style>
