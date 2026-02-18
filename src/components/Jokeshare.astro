@@ -8,9 +8,13 @@
     <p>A single page app that allows users to share and collect jokes.</p>
     <p>Built with React, Zustand, Tailwind CSS</p>
     <div class="options">
-      <a href="https://owenouyang.com/" target="_blank">View Project</a>
-      <a href="https://github.com/owen7460/joke-share-react" target="_blank"
-        >More Details</a
+      <a
+        href="https://github.com/owen7460/joke-share-react"
+        class="moreDetails"
+        target="_blank">More Details</a
+      >
+      <a href="https://owenouyang.com/" class="viewProject" target="_blank"
+        >View Project</a
       >
     </div>
   </div>
@@ -63,6 +67,18 @@
       border-radius: 26px;
       margin-right: 1rem;
       border: 1px solid #fff;
+
+      &.viewProject {
+        background-color: #ffffff;
+        color: #555555;
+        border: 1px solid #fff;
+
+        &:hover {
+          background-color: transparent;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+      }
     }
     a:hover {
       background-color: #fff;

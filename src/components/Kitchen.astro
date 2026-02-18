@@ -12,7 +12,9 @@
     </p>
     <p>Built with PHP, MySQL</p>
     <div class="options">
-      <a href="https://owen-kitchen.com" target="_blank">View Project</a>
+      <a href="https://owen-kitchen.com" class="viewProject" target="_blank"
+        >View Project</a
+      >
       <!-- <a href="">More Details</a> -->
     </div>
   </div>
@@ -65,10 +67,18 @@
       border-radius: 26px;
       margin-right: 1rem;
       border: 1px solid #fff;
-    }
-    a:hover {
-      background-color: #fff;
-      color: #555555;
+
+      &.viewProject {
+        background-color: #ffffff;
+        color: #555555;
+        border: 1px solid #fff;
+
+        &:hover {
+          background-color: transparent;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+      }
     }
   }
 </style>
