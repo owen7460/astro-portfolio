@@ -1,0 +1,48 @@
+---
+
+---
+
+<main>
+  <section id="aboutme1">
+    <h2>About Me 1</h2>
+  </section>
+  <section id="aboutme2">
+    <h2>About Me 2</h2>
+  </section>
+  <section id="aboutme3">
+    <h2>About Me 3</h2>
+  </section>
+  <section id="aboutme4">
+    <h2>About Me 4</h2>
+  </section>
+</main>
+
+<style>
+  main {
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    height: 100vh;
+
+    section {
+      scroll-snap-align: start;
+      width: 100vw;
+      height: 100vh;
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+
+  #aboutme1 {
+    background-color: pink;
+  }
+  #aboutme2 {
+    background-color: blue;
+  }
+  #aboutme3 {
+    background-color: green;
+  }
+  #aboutme4 {
+    background-color: yellow;
+  }
+</style>
