@@ -272,6 +272,39 @@
           padding: 1.8rem;
           border-radius: 1rem;
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+          position: relative;
+
+          &:before,
+          &:after {
+            content: "";
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background-image: conic-gradient(
+              from 180deg,
+              #d71b1b,
+              #e2c41b,
+              #37d410,
+              #17d1ce,
+              #278ebd,
+              #275da3,
+              #a846d6,
+              #d646be,
+              #951268,
+              #c7164e,
+              #da1818,
+              #d71b1b
+            );
+            border-radius: 1rem;
+            z-index: -5;
+          }
+          &:before {
+            filter: blur(1.1rem);
+            opacity: 0.8;
+          }
         }
 
         img {
