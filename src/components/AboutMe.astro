@@ -6,7 +6,7 @@
   <section id="aboutme1">
     <div class="content">
       <h2>Hi, I’m Owen.</h2>
-      <p>a Front-end focused Full-Stack Developer.</p>
+      <h3>a Front-end focused Full-Stack Developer.</h3>
       <p>
         Before transitioning into tech, I worked as a professional opera tenor,
         an experience that honed my discipline, creativity, and ability to
@@ -20,89 +20,338 @@
     </div>
   </section>
   <section id="aboutme2">
-    <h2>About Me 2</h2>
+    <div class="skillsBento">
+      <div class="item1">
+        <img
+          src="/icons/js.png"
+          alt="icon of javascript"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/ts.png"
+          alt="icon of typescript"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/react.png"
+          alt="icon of react"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/react-native-logo.png"
+          alt="icon of react native"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/swiftUI.png"
+          alt="icon of swiftui"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/nextjs.jpeg"
+          alt="icon of nextjs"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/astro-logo-dark.svg"
+          alt="icon of nextjs"
+          width="128"
+          height="64"
+        />
+        <img
+          src="/icons/PHP_Logo.png"
+          alt="icon of nextjs"
+          width="128"
+          height="64"
+        />
+      </div>
+      <div class="item2">
+        <img
+          src="/icons/nodejs.png"
+          alt="icon of nodejs"
+          width="128"
+          height="128"
+        />
+        <img
+          src="/icons/expressjs.webp"
+          alt="icon of expressjs"
+          width="128"
+          height="128"
+        />
+        <img
+          src="/icons/mysql.svg"
+          alt="icon of mysql"
+          width="128"
+          height="128"
+        />
+        <img
+          src="/icons/mongodb.svg"
+          alt="icon of mongodb"
+          width="128"
+          height="128"
+        />
+      </div>
+      <div class="item3">
+        <img
+          src="/icons/tailwind-css-seeklogo.svg"
+          alt="icon of tailwindcss"
+          width="128"
+          height="128"
+        />
+        <img
+          src="/icons/Shadcn.jpg"
+          alt="icon of shadcn"
+          width="128"
+          height="128"
+        />
+        <img src="/icons/sass.png" alt="icon of sass" width="64" height="64" />
+      </div>
+      <div class="item4">
+        <img
+          src="/icons/wordpress-logo.svg"
+          alt="icon of wordpress"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/elementor-seeklogo.svg"
+          alt="icon of wordpress"
+          width="64"
+          height="64"
+        />
+      </div>
+      <div class="item5">
+        <img
+          src="/icons/figma.png"
+          alt="icon of figma"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/adobe-photoshop-seeklogo.svg"
+          alt="icon of figma"
+          width="64"
+          height="64"
+        />
+        <img
+          src="/icons/Illustrator.png"
+          alt="icon of illustrator"
+          width="64"
+          height="64"
+        />
+      </div>
+    </div>
+    <div class="content">
+      <h2>Technology with Purpose</h2>
+      <p>
+        I am a self-driven developer, energized by exploring new technologies
+        and excited to apply them. I see technology as a tool to solve real
+        problems, and I strive to implement the most effective solutions.
+        Passionate about bridging the gap between technology and product, I aim
+        to create meaningful and practical outcomes through my work.
+      </p>
+    </div>
   </section>
   <section id="aboutme3">
     <h2>About Me 3</h2>
   </section>
   <section id="aboutme4">
-    <h2>About Me 4</h2>
+    <div class="content">
+      <h2>About Me 4</h2>
+    </div>
   </section>
+
+  <style lang="scss">
+    @mixin scroll-snap-section {
+      scroll-snap-align: start;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    @mixin content-title {
+      font-size: 3.2rem;
+      font-weight: 100;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    @mixin content-subtitle {
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      letter-spacing: 0.6px;
+    }
+
+    @mixin content-text {
+      font-weight: 300;
+      font-size: 1.2rem;
+      letter-spacing: 0.6px;
+      line-height: 1.8rem;
+    }
+
+    main {
+      scroll-snap-type: y mandatory;
+      overflow: scroll;
+      height: 100vh;
+    }
+
+    #aboutme1 {
+      @include scroll-snap-section;
+      background-image: url("/operaBG.jpg");
+      background-size: cover;
+      background-position: right center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      z-index: -10;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          rgba(213, 213, 213, 1) 0%,
+          rgba(213, 213, 213, 1) 40%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        z-index: -5;
+      }
+
+      .content {
+        z-index: 10;
+        color: #545454;
+        position: absolute;
+        top: 51%;
+        left: 32%;
+        transform: translate(-50%, -50%);
+        max-width: 550px;
+        padding: 2rem;
+        h2 {
+          @include content-title;
+        }
+        h3 {
+          @include content-subtitle;
+        }
+        p {
+          @include content-text;
+        }
+      }
+    }
+
+    #aboutme2 {
+      @include scroll-snap-section;
+      background-color: #d5d5d5;
+      position: relative;
+      z-index: -10;
+
+      .skillsBento {
+        position: absolute;
+        padding: 2rem;
+        top: 56%;
+        left: 27%;
+        transform: translate(-50%, -50%);
+        width: 56rem;
+        height: 50rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 1.8rem;
+
+        div {
+          background-color: #fff;
+          padding: 1.8rem;
+        }
+
+        img {
+          border-radius: 1rem;
+          height: 64px;
+          width: auto;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .item1 {
+          grid-column: 1 / span 3;
+          grid-row: 1 / span 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0 2rem;
+        }
+        .item2 {
+          grid-column: 4 / span 2;
+          grid-row: 1 / span 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0 2rem;
+        }
+
+        .item3 {
+          grid-column: 1 / span 3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0 2rem;
+        }
+
+        .item4 {
+          grid-column: 4 / span 2;
+          grid-row: 3 / span 2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 2.6rem;
+        }
+
+        .item5 {
+          grid-column: 1 / span 3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 2.4rem;
+        }
+      }
+
+      .content {
+        max-width: 450px;
+        z-index: 20;
+        color: #545454;
+        position: absolute;
+        transform: translate(0, -50%);
+        top: 52%;
+        right: 14%;
+        padding: 2rem;
+        h2 {
+          @include content-title;
+        }
+        p {
+          @include content-text;
+        }
+      }
+    }
+    #aboutme3 {
+      @include scroll-snap-section;
+      background-color: green;
+    }
+    #aboutme4 {
+      @include scroll-snap-section;
+      background-color: yellow;
+    }
+  </style>
 </main>
-
-<style lang="scss">
-  @mixin scroll-snap-section {
-    scroll-snap-align: start;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  main {
-    scroll-snap-type: y mandatory;
-    overflow: scroll;
-    height: 100vh;
-  }
-
-  #aboutme1 {
-    @include scroll-snap-section;
-    background-image: url("/operaBG.jpg");
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    z-index: -10;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      z-index: -5;
-    }
-
-    .content {
-      z-index: 10;
-      color: #545454;
-      position: absolute;
-      top: 51%;
-      left: 30%;
-      transform: translate(-50%, -50%);
-      max-width: 550px;
-      padding: 2rem;
-      h2 {
-        font-size: 3.2rem;
-        font-weight: 100;
-        margin-bottom: 3rem;
-        letter-spacing: 1px;
-      }
-      p {
-        font-weight: 300;
-        font-size: 1.2rem;
-        letter-spacing: 0.6px;
-        line-height: 1.8rem;
-      }
-    }
-  }
-
-  #aboutme2 {
-    @include scroll-snap-section;
-    background-color: blue;
-  }
-  #aboutme3 {
-    @include scroll-snap-section;
-    background-color: green;
-  }
-  #aboutme4 {
-    @include scroll-snap-section;
-    background-color: yellow;
-  }
-</style>
