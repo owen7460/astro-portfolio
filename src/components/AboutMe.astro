@@ -406,10 +406,10 @@ import behance from "../assets/behance.png";
       }
 
       .content {
-        background-color: rgba(255, 255, 255, 0.35);
-        box-shadow: 1px 1px 10px 0 rgba(46, 46, 46, 0.3);
+        background-color: rgba(87, 87, 87, 0.51);
+        box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
         border-radius: 1rem;
-        backdrop-filter: blur(55px);
+        backdrop-filter: blur(2px);
         width: 750px;
         z-index: 10;
         position: absolute;
@@ -419,12 +419,15 @@ import behance from "../assets/behance.png";
         padding: 4rem 3rem;
         h2 {
           @include content-title;
+          color: #fff;
         }
         h3 {
           @include content-subtitle;
+          color: #fff;
         }
         p {
           @include content-text;
+          color: #fff;
         }
       }
     }
