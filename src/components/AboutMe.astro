@@ -159,6 +159,7 @@ import piano from "../assets/piano.jpg";
       </div>
       <div class="content">
         <h2>Technology with Purpose</h2>
+        <hr class="decorationLine" />
         <p>
           I am a self-driven developer, energized by exploring new technologies
           and excited to apply them. I see technology as a tool to solve real
@@ -170,7 +171,31 @@ import piano from "../assets/piano.jpg";
     </div>
   </section>
   <section id="aboutme3">
-    <h2>About Me 3</h2>
+    <div class="desert-bg">
+      <svg viewBox="0 0 1000 600" class="path">
+        <path
+          d="M 0 420 C 200 320, 400 520, 700 370 S 1100 420, 1300 300"
+          stroke="rgba(255,255,255,0.5)"
+          stroke-width="12"
+          fill="none"
+          stroke-linecap="round"
+        >
+        </path>
+      </svg>
+      <div class="products">
+        <h2>Aesthetic & Function in Harmony</h2>
+        <hr class="decorationLine" />
+        <p>
+          The product is more about providing delightful experiences. When users
+          browse a website or use an app, I strive to offer them the perfect
+          balance between aesthetics and functionality—just like performing on
+          stage, where every note must hit at the perfect moment. Similarly,
+          every feature should appear exactly when the user needs it. As a
+          designer, I also aim to enhance the experience through beautiful
+          elements
+        </p>
+      </div>
+    </div>
   </section>
   <section id="aboutme4">
     <div class="content">
@@ -204,6 +229,15 @@ import piano from "../assets/piano.jpg";
       font-size: 1rem;
       letter-spacing: 0.6px;
       line-height: 1.8rem;
+    }
+
+    .decorationLine {
+      width: 12rem;
+      height: 0.2px;
+      background-color: #373737;
+      border: none;
+      margin: 0;
+      margin-bottom: 1.2rem;
     }
 
     main {
@@ -389,9 +423,10 @@ import piano from "../assets/piano.jpg";
           color: #545454;
           h2 {
             @include content-title;
+            margin-bottom: 3rem;
           }
           p {
-            margin-top: 3rem;
+            margin-top: 4rem;
             @include content-text;
           }
         }
@@ -399,11 +434,99 @@ import piano from "../assets/piano.jpg";
     }
     #aboutme3 {
       @include scroll-snap-section;
-      background-color: green;
+
+      .desert-bg {
+        position: relative;
+        height: 100vh;
+        background:
+          radial-gradient(
+            circle at 70% 20%,
+            rgba(255, 230, 180, 0.6),
+            transparent 40%
+          ),
+          linear-gradient(to bottom, #f5e6c8, #eac38a, #d8a35c, #b87a3c);
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 220px;
+
+          background: linear-gradient(
+            to bottom,
+            #e1e1e1,
+            rgba(225, 225, 225, 0)
+          );
+          pointer-events: none;
+          z-index: 5;
+        }
+      }
+
+      .path {
+        position: absolute;
+        inset: 0;
+        width: 120%;
+        left: -10%;
+        height: 100%;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        opacity: 0;
+        animation: opacity 0.3s ease-out;
+
+        &.animate {
+          animation: drawPath 3s ease-in-out forwards;
+          opacity: 1;
+        }
+
+        @keyframes drawPath {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+      }
+
+      .products {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        h2 {
+          @include content-title;
+        }
+        p {
+          @include content-text;
+        }
+      }
     }
     #aboutme4 {
       @include scroll-snap-section;
       background-color: yellow;
     }
   </style>
+
+  <script>
+    const path = document.querySelector(".path");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            path?.classList.add("animate");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    observer.observe(path!);
+  </script>
 </main>
