@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import picker from "../assets/picker.png";
 import piano from "../assets/piano.jpg";
 import linkedin from "../assets/linkedin.png";
 import github from "../assets/github.png";
@@ -7,6 +8,7 @@ import github from "../assets/github.png";
 
 <main>
   <section id="aboutme1">
+    <Image src={picker} alt="picker" width="474" height="333" id="picker" />
     <Image src={piano} alt="piano" width="700" height="550" id="piano" />
     <div class="content">
       <h2>Hi, I’m Owen.</h2>
@@ -387,6 +389,15 @@ import github from "../assets/github.png";
         z-index: 5;
       }
 
+      #picker {
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+        top: 14%;
+        left: 50%;
+        z-index: 4;
+      }
+
       .content {
         background-color: rgba(255, 255, 255, 0.35);
         box-shadow: 1px 1px 10px 0 rgba(46, 46, 46, 0.3);
@@ -395,8 +406,8 @@ import github from "../assets/github.png";
         width: 750px;
         z-index: 10;
         position: absolute;
-        top: 32%;
-        left: 40%;
+        top: 38%;
+        left: 45%;
 
         padding: 4rem 3rem;
         h2 {
