@@ -1,0 +1,113 @@
+---
+import { Image } from "astro:assets";
+import forJoMalone from "../assets/jomaloneFigma.jpg";
+import forGoodreads from "../assets/goodreadsFigma.jpg";
+import forVolvo from "../assets/volvoFigma.jpg";
+import stampedeBrandGuideline from "../assets/stampedeBrandGuideline.jpg";
+import cake from "../assets/cake.png";
+import illustrator from "../assets/illustrator.jpg";
+---
+
+<div class="figmaDesignSection">
+  <h2>Figma Design</h2>
+  <div class="figmaDesigns">
+    <div class="design-item">
+      <Image src={forJoMalone} alt="for Jo Malone" />
+      <p>For Jo Malone Website</p>
+    </div>
+    <div class="design-item">
+      <Image src={forGoodreads} alt="for Goodreads" />
+      <p>For Goodreads Website</p>
+    </div>
+    <div class="design-item">
+      <Image src={forVolvo} alt="for Volvo" />
+      <p>For Volvo Cars Website</p>
+    </div>
+  </div>
+  <h2>Visual Design</h2>
+  <div class="visualDesigns">
+    <div class="design-item">
+      <Image src={stampedeBrandGuideline} alt="brand guideline for Stampede" />
+      <p>Brand Guideline for Stampede</p>
+    </div>
+    <div class="design-item">
+      <Image src={cake} alt="a composition for Z-Crew pancake" />
+      <p>Composition for Z-Crew pancake</p>
+    </div>
+    <div class="design-item">
+      <Image src={illustrator} alt="a composition for Z-Crew pancake" />
+      <p>Composition for Z-Crew pancake</p>
+    </div>
+    <style lang="scss">
+      :root {
+        --background-color: #f5f5f5;
+        --text-color: #545454;
+      }
+      @mixin deisgn-section {
+        gap: 4rem;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        margin-left: 5rem;
+      }
+
+      @mixin design-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        padding: 0 5rem;
+      }
+
+      @mixin deisng-item {
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 1rem;
+          object-fit: cover;
+          transition: transform 0.2s ease-in-out;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .figmaDesignSection {
+        margin-top: 3rem;
+        z-index: 0;
+        position: relative;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        width: 100%;
+        padding: 4rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2rem;
+        h2 {
+          font-size: 3.8rem;
+          font-weight: 100;
+          margin-bottom: 0.8rem;
+          letter-spacing: 1px;
+          color: var(--text-color);
+          margin-left: 5rem;
+        }
+
+        .figmaDesigns {
+          @include design-grid;
+          .design-item {
+            @include deisng-item;
+          }
+        }
+        .visualDesigns {
+          @include design-grid;
+          .design-item {
+            @include deisng-item;
+          }
+        }
+      }
+    </style>
+  </div>
+</div>
