@@ -1,9 +1,11 @@
 ---
-
+import { Image } from "astro:assets";
+import piano from "../assets/piano.jpg";
 ---
 
 <main>
   <section id="aboutme1">
+    <Image src={piano} alt="piano" width="700" height="550" id="piano" />
     <div class="content">
       <h2>Hi, I’m Owen.</h2>
       <h3>a Front-end focused Full-Stack Developer.</h3>
@@ -99,6 +101,7 @@
       </div>
       <div class="item3">
         <img
+          id="tailwindcss"
           src="/icons/tailwind-css-seeklogo.svg"
           alt="icon of tailwindcss"
           width="128"
@@ -190,7 +193,7 @@
 
     @mixin content-text {
       font-weight: 300;
-      font-size: 1.2rem;
+      font-size: 1rem;
       letter-spacing: 0.6px;
       line-height: 1.8rem;
     }
@@ -203,39 +206,34 @@
 
     #aboutme1 {
       @include scroll-snap-section;
-      background-image: url("/operaBG.jpg");
-      background-size: cover;
-      background-position: right center;
-      background-repeat: no-repeat;
       position: relative;
-      overflow: hidden;
-      z-index: -10;
+      z-index: 0;
+      background-color: #e1e1e1;
 
-      &::before {
-        content: "";
+      #piano {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          to right,
-          rgba(213, 213, 213, 1) 0%,
-          rgba(213, 213, 213, 1) 40%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        z-index: -5;
+        object-fit: cover;
+        object-position: center;
+        top: 38%;
+        left: 33%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+        z-index: 5;
       }
 
       .content {
+        background-color: rgba(255, 255, 255, 0.25);
+        box-shadow: 1px 1px 10px 0 rgba(46, 46, 46, 0.3);
+        border-radius: 1rem;
+        backdrop-filter: blur(55px);
         z-index: 10;
-        color: #545454;
+        color: #373737;
         position: absolute;
-        top: 51%;
-        left: 32%;
+        top: 63%;
+        left: 54%;
         transform: translate(-50%, -50%);
         max-width: 550px;
-        padding: 2rem;
+        padding: 4rem 3rem;
         h2 {
           @include content-title;
         }
@@ -250,7 +248,7 @@
 
     #aboutme2 {
       @include scroll-snap-section;
-      background-color: #d5d5d5;
+      background-color: #e1e1e1;
       position: relative;
       z-index: -10;
 
@@ -266,6 +264,10 @@
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
         gap: 1.8rem;
+
+        #tailwindcss {
+          border-radius: 0;
+        }
 
         div {
           background-color: #fff;
@@ -293,17 +295,17 @@
               #275da3,
               #a846d6,
               #d646be,
-              #951268,
-              #c7164e,
-              #da1818,
+              #3ed676,
+              #57c716,
+              #a33895,
               #d71b1b
             );
             border-radius: 1rem;
             z-index: -5;
           }
           &:before {
-            filter: blur(1.1rem);
-            opacity: 0.8;
+            filter: blur(1.5rem);
+            opacity: 0.4;
           }
         }
 
@@ -376,6 +378,7 @@
           @include content-title;
         }
         p {
+          margin-top: 3rem;
           @include content-text;
         }
       }
