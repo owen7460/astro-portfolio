@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import linkedin from "../assets/linkedin.png";
+import github from "../assets/github.png";
+import behance from "../assets/behance.png";
+import instagram from "../assets/instagram.png";
+---
+
+<footer>
+  <h2>Owen Ouyang</h2>
+  <p>Full-Stack Developer & Designer Based in Calgary, Canada</p>
+  <p>Frontend | Backend | Design</p>
+  <div class="slogan">
+    <p>Let’s build something amazing together</p>
+    <p>Available for new opportunities</p>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/xiongwenouyang/"
+      ><Image src={linkedin} alt="linkedin" width="24" height="24" /></a
+    >
+    <a href="https://github.com/owen7460"
+      ><Image src={github} alt="github" width="24" height="24" /></a
+    >
+    <a href="https://www.instagram.com/owenwebdesignerdeveloper/"
+      ><Image src={instagram} alt="instagram" width="24" height="24" /></a
+    >
+    <a href="https://www.behance.net/xiongwenouyang"
+      ><Image src={behance} alt="behance" width="24" height="24" /></a
+    >
+    <p>Copyright © 2026 Owen Ouyang. All rights reserved.</p>
+  </div>
+</footer>
+
+<style lang="scss">
+  footer {
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 3rem 0;
+    color: #545454;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 3px 3px 5px 0 rgba(136, 136, 136, 0.5);
+    box-shadow: 1px 1px 3px 0 rgba(255, 255, 255, 0.6);
+    border: 2px solid rgb(226, 226, 226);
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-weight: 100;
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    .slogan {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-line {
+      width: 75%;
+      height: 1px;
+      background-color: #545454;
+      border: none;
+      margin: 0;
+      margin-bottom: 1.2rem;
+    }
+  }
+</style>
