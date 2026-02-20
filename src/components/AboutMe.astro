@@ -194,7 +194,7 @@ import github from "../assets/github.png";
           stage, where every note must hit at the perfect moment. Similarly,
           every feature should appear exactly when the user needs it. As a
           designer, I also aim to enhance the experience through beautiful
-          elements
+          elements.
         </p>
       </div>
     </div>
@@ -305,8 +305,12 @@ import github from "../assets/github.png";
       <div class="aboutme4-contactme">
         <p>Owen is open to new opportunities.</p>
         <p>Contact Me:</p>
-        <p>ouyangxiongwen@gmail.com</p>
-        <p>+1 368-999-2887</p>
+        <p>
+          Email: <a href="mailto:ouyangxiongwen@gmail.com"
+            >ouyangxiongwen@gmail.com</a
+          >
+        </p>
+        <p>Phone: +1 368-999-2887</p>
         <p>
           LinkedIn: <a href="https://www.linkedin.com/in/xiongwenouyang/"
             >Owen-Ouyang</a
@@ -824,6 +828,13 @@ import github from "../assets/github.png";
           @include box;
           grid-column: 2 / span 2;
           grid-row: 3 / span 1;
+          a {
+            text-decoration: none;
+            color: var(--text-color);
+            &:hover {
+              text-decoration: underline;
+            }
+          }
         }
       }
     }
